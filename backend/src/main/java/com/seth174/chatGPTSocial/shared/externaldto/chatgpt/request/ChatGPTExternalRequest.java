@@ -12,9 +12,9 @@ public class ChatGPTExternalRequest {
     private double temperature;
 
     public ChatGPTExternalRequest(String prompt){
-        this.model = ChatGPTRequestConstants.model;
+        this.model = ChatGPTRequestConstants.MODEL;
         this.prompt = prompt;
-        this.maxTokens = ChatGPTRequestConstants.max_tokens;
-        this.temperature = ChatGPTRequestConstants.temperature;
+        this.maxTokens = ChatGPTRequestConstants.MAX_TOKENS;
+        this.temperature = ChatGPTRequestConstants.TEMPERATURE;
     }
 }
