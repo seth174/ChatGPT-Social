@@ -10,9 +10,11 @@ import reactor.core.publisher.Mono;
 @Component
 public class ChatGPTService {
     private final ChatGPTClient chatGPTClient;
+
     public ChatGPTService(ChatGPTClient chatGPTClient){
         this.chatGPTClient = chatGPTClient;
     }
+
     public Mono<ChatGPTResponse> postChatGPTRequest(ChatGPTRequest request){
         ChatGPTExternalRequest chatGPTExternalRequest = new ChatGPTExternalRequest(request.getPrompt());
         return chatGPTClient.postChatGPTRequest(chatGPTExternalRequest)
