@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2e1f7c8-b408-4225-b91a-2c21096cc781" name="Changes" comment="Removed Next fe" />
+    <list default="true" id="d2e1f7c8-b408-4225-b91a-2c21096cc781" name="Changes" comment="Added heart table in db">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V2__ADDED_LIKE_TABLE.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,12 +30,16 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -108,7 +119,35 @@
       <option name="project" value="LOCAL" />
       <updated>1675927546856</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added react typescript fe">
+      <created>1675927833901</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675927833901</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added flyway and created person table">
+      <created>1676351662897</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676351662897</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added person entity, person repository, and post call">
+      <created>1676445834809</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676445834810</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added heart table in db">
+      <created>1676533310949</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676533310949</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,7 +166,11 @@
     <MESSAGE value="Added endpoint to hit open ai endpoint" />
     <MESSAGE value="Fixed constants spelling" />
     <MESSAGE value="Removed Next fe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Next fe" />
+    <MESSAGE value="Added react typescript fe" />
+    <MESSAGE value="Added flyway and created person table" />
+    <MESSAGE value="Added person entity, person repository, and post call" />
+    <MESSAGE value="Added heart table in db" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added heart table in db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -149,6 +192,16 @@
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/seth174/chatGPTSocial/service/PersonService.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/seth174/chatGPTSocial/service/PersonService.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
