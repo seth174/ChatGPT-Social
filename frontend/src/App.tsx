@@ -8,10 +8,10 @@ import SideDrawer from './components/drawer';
 function App() {
   return (
     <Grid container>
-      <Grid item lg={2} md={1} sm={2} xs={1}>
+      <Grid item lg={3} md={1} sm={2} xs={1}>
         <SideDrawer />
       </Grid>
-      <Grid item lg={6} md={6} sm={7} xs={11} sx={{ border: '1px solid black' }}>
+      <Grid item lg={5} md={6} sm={7} xs={11} sx={{ border: '1px solid black' }}>
         <Routes>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/profile" element={<Profile />}></Route>

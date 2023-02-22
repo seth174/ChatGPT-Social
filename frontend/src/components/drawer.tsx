@@ -5,31 +5,38 @@ import Box from '@mui/material/Box';
 import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 
 const SideDrawer: FC = () => {
-    const drawerWidth = 240;
+
+    const navValues: any[][] = [
+        [<TwitterIcon fontSize="large" />, '/home', ''],
+        [<HomeIcon fontSize="large" />, '/home', 'Home'],
+        [<PersonIcon fontSize="large" />, '/profile', 'Profile'],
+        [<BookmarkIcon fontSize="large" />, '/bookmarks', 'Bookmarks']
+
+    ]
+
     return (
-        // <ul>
-        //     <li><Link to='/home'>home</Link></li>
-        //     <li><Link to='/profile'>profile</Link></li>
-        //     <li><Link to='/whatever'>home</Link></li>
-        // </ul>
         <Box sx={{
             float: { sm: 'right', lg: 'right' },
-            position: { xs: 'relative' },
-            mr: { lg: 5 }
-
+            position: { xs: 'relative' }
         }}>
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {navValues.map((navValue, index) => (
+                    <ListItem key={index} disablePadding>
+                        <ListItemButton component={Link} to={navValue[1]}>
+                            <ListItemIcon >
+                                {navValue[0]}
                             </ListItemIcon>
-                            <ListItemText primary={text} sx={{
+                            <ListItemText primary={navValue[2]} sx={{
                                 display: { xs: 'none', lg: 'block' },
+                                fontSize: 'small'
                             }} />
                         </ListItemButton>
                     </ListItem>
