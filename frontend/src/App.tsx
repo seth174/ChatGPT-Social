@@ -3,7 +3,7 @@ import './App.css';
 import Grid from '@mui/material/Grid';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Home, Profile, Rand } from './test';
-import SideDrawer from './components/drawer';
+import SideDrawer from './components/drawer/drawer';
 
 function App() {
   return (

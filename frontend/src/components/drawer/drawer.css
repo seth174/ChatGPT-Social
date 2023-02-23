@@ -1,0 +1,17 @@
+:root {
+    --red: #b00;
+    --blue: #4679bd;
+    --grey: #ddd;
+    --W200: 200px;
+    --Lft: left;
+}
+
+.button {
+    background-color: #4679bd;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    /* Green */
+    color: var(--red);
+}

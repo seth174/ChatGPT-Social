@@ -10,6 +10,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { OverridableComponent } from "@mui/material/OverridableComponent";
+import CreateIcon from '@mui/icons-material/Create';
+import './drawer.css';
 
 const SideDrawer: FC = () => {
 
@@ -21,16 +23,33 @@ const SideDrawer: FC = () => {
 
     ]
 
+    const fullDrawer = {
+        display: 'flex',
+        justifyContent: 'center',
+        float: 'none',
+    };
+
+    const smallDrawer = {
+        float: 'right',
+        display: 'inline',
+        justifyContent: 'normal'
+    }
+
     return (
         <Box sx={{
-            float: { sm: 'right', lg: 'right' },
-            position: { xs: 'relative' }
+            display: { lg: fullDrawer.display, md: smallDrawer.display },
+            justifyContent: { lg: fullDrawer.justifyContent, md: smallDrawer.justifyContent },
+            float: { lg: fullDrawer.float, md: smallDrawer.float }
         }}>
             <Divider />
             <List>
                 {navValues.map((navValue, index) => (
                     <ListItem key={index} disablePadding>
-                        <ListItemButton component={Link} to={navValue[1]}>
+                        <ListItemButton
+                            component={Link}
+                            to={navValue[1]}
+                            sx={{ borderRadius: 10 }}
+                        >
                             <ListItemIcon >
                                 {navValue[0]}
                             </ListItemIcon>
@@ -41,8 +60,19 @@ const SideDrawer: FC = () => {
                         </ListItemButton>
                     </ListItem>
                 ))}
+                <ListItem disablePadding>
+                    <ListItemButton component={Link} to={'/create'} className="button">
+                        <ListItemIcon >
+                            <CreateIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={"New Chat"} sx={{
+                            display: { xs: 'none', lg: 'block' },
+                            fontSize: 'small'
+                        }} />
+                    </ListItemButton>
+                </ListItem>
             </List>
-        </Box>
+        </Box >
     );
 }
 
