@@ -2,14 +2,11 @@ import { FC } from "react";
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import { OverridableComponent } from "@mui/material/OverridableComponent";
 import CreateIcon from '@mui/icons-material/Create';
 import './drawer.css';
 
@@ -60,15 +57,16 @@ const SideDrawer: FC = () => {
                         </ListItemButton>
                     </ListItem>
                 ))}
-                <ListItem disablePadding>
-                    <ListItemButton component={Link} to={'/create'} className="button">
-                        <ListItemIcon >
-                            <CreateIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={"New Chat"} sx={{
-                            display: { xs: 'none', lg: 'block' },
-                            fontSize: 'small'
-                        }} />
+                <ListItem className={"button"}>
+                    <ListItemButton component={Link} to={'/create'} >
+                        <CreateIcon className="icon" />
+                        <ListItemText
+                            primary={"New Chat"}
+                            disableTypography
+                            className="text-size"
+                            sx={{
+                                display: { xs: 'none', lg: 'block' },
+                            }} />
                     </ListItemButton>
                 </ListItem>
             </List>
