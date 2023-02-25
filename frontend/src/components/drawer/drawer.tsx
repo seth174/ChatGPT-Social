@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -32,6 +32,8 @@ const SideDrawer: FC = () => {
         justifyContent: 'normal'
     }
 
+    const location = useLocation().pathname;
+
     return (
         <Box sx={{
             display: { lg: fullDrawer.display, md: smallDrawer.display },
@@ -41,7 +43,7 @@ const SideDrawer: FC = () => {
             <Divider />
             <List>
                 {navValues.map((navValue, index) => (
-                    <ListItem key={index} disablePadding>
+                    <ListItem key={index} disablePadding className={location == navValue[1] ? 'button' : 'none'}>
                         <ListItemButton
                             component={Link}
                             to={navValue[1]}
