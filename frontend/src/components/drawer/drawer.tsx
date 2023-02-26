@@ -8,15 +8,18 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import CreateIcon from '@mui/icons-material/Create';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import './drawer.css';
 
 const SideDrawer: FC = () => {
 
     const navValues: any[][] = [
-        [<TwitterIcon fontSize="large" />, '/home', ''],
-        [<HomeIcon fontSize="large" />, '/home', 'Home'],
-        [<PersonIcon fontSize="large" />, '/profile', 'Profile'],
-        [<BookmarkIcon fontSize="large" />, '/bookmarks', 'Bookmarks']
+        [<TwitterIcon fontSize="large" className="twitter-icon" />, <TwitterIcon fontSize="large" className="twitter-icon" />, '/home', ''],
+        [<HomeIcon fontSize="large" className="list-icon" />, <HomeOutlinedIcon fontSize="large" className="list-icon" />, '/home', 'Home'],
+        [<PersonIcon fontSize="large" className="list-icon" />, <PersonOutlineOutlinedIcon fontSize="large" className="list-icon" />, '/profile', 'Profile'],
+        [<BookmarkIcon fontSize="large" className="list-icon" />, <BookmarkBorderOutlinedIcon fontSize="large" className="list-icon" />, '/bookmarks', 'Bookmarks']
 
     ]
 
@@ -41,25 +44,35 @@ const SideDrawer: FC = () => {
             float: { lg: fullDrawer.float, md: smallDrawer.float }
         }}>
             <Divider />
-            <List>
+            <List className="list">
                 {navValues.map((navValue, index) => (
-                    <ListItem key={index} disablePadding className={location == navValue[1] ? 'button' : 'none'}>
+                    <ListItem
+                        key={index}
+                        disablePadding
+                        className=
+                        {
+                            location == navValue[2] && navValue[3] != '' ? 'button selected-button nav-button' : 'button unselected-button nav-button'
+                        }
+                    >
                         <ListItemButton
                             component={Link}
-                            to={navValue[1]}
-                            sx={{ borderRadius: 10 }}
+                            to={navValue[2]}
                         >
                             <ListItemIcon >
-                                {navValue[0]}
+                                {location == navValue[2] ? navValue[0] : navValue[1]}
                             </ListItemIcon>
-                            <ListItemText primary={navValue[2]} sx={{
-                                display: { xs: 'none', lg: 'block' },
-                                fontSize: 'small'
-                            }} />
+                            <ListItemText
+                                primary={navValue[3]}
+                                disableTypography
+                                className="text-size"
+                                sx={{
+                                    display: { xs: 'none', lg: 'block' },
+                                }}
+                            />
                         </ListItemButton>
                     </ListItem>
                 ))}
-                <ListItem className={"button"}>
+                <ListItem className={"button chat-button"} disablePadding>
                     <ListItemButton component={Link} to={'/create'} >
                         <CreateIcon className="icon" />
                         <ListItemText

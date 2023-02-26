@@ -1,20 +1,53 @@
 .button {
-    background-color: #4679bd;
-    color: white;
     border-radius: 10px;
+    white-space: normal;
+    flex-flow: "column wrap"
+}
+
+.button:hover {
+    background-color: #d8e3ec;
+}
+
+.chat-button {
+    background-color: #49a7f4;
+    color: white;
+    font-size: 20px
+}
+
+.chat-button:hover {
+    background-color: #49a7f4;
+}
+
+.chat-button:hover icon:not(:hover) {
+    background-color: #49a7f4;
+    color: white;
+}
+
+.nav-button {}
+
+.unselected-button {}
+
+.selected-button {
+    font-weight: 800;
+}
+
+.chat-button {
     margin-top: 50px;
 }
+
 
 .text-size {
     font-size: 20px;
 }
 
-.button:hover {
-    background-color: #42a5f5;
+.text-size-nav {
+    font-size: 20px;
 }
 
-.button:hover icon:not(:hover) {
-    background-color: #42a5f5;
-    color: white;
-    border-radius: 10px;
+.list-icon {
+    color: black;
+}
+
+.twitter-icon {
+    color: #49a7f4;
 }
