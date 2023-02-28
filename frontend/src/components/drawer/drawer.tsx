@@ -12,8 +12,11 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import './drawer.css';
+import NewChatModal from "../new-chat-modal/new-chat-modal";
 
 const SideDrawer: FC = () => {
+
+    const [open, setOpen] = useState<boolean>(false);
 
     const navValues: any[][] = [
         [<TwitterIcon fontSize="large" className="twitter-icon" />, <TwitterIcon fontSize="large" className="twitter-icon" />, '/home', ''],
@@ -73,7 +76,7 @@ const SideDrawer: FC = () => {
                     </ListItem>
                 ))}
                 <ListItem className={"button chat-button"} disablePadding>
-                    <ListItemButton component={Link} to={'/create'} >
+                    <ListItemButton onClick={() => setOpen(true)} >
                         <CreateIcon className="icon" />
                         <ListItemText
                             primary={"New Chat"}
@@ -85,6 +88,7 @@ const SideDrawer: FC = () => {
                     </ListItemButton>
                 </ListItem>
             </List>
+            {open && <NewChatModal open={open} setOpen={setOpen} />}
         </Box >
     );
 }
