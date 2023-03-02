@@ -1,5 +1,5 @@
 .button {
-    border-radius: 10px;
+    border-radius: 20px;
     white-space: normal;
     flex-flow: "column wrap"
 }
@@ -36,8 +36,8 @@
 }
 
 
-.text-size {
-    font-size: 20px;
+.bold {
+    font-weight: bold;
 }
 
 .text-size-nav {
@@ -48,6 +48,17 @@
     color: black;
 }
 
+.list {
+    width: 60%;
+    margin-left: 75px;
+}
+
 .twitter-icon {
     color: #49a7f4;
 }
+
+.new-chat-button {
+    text-align: center;
+}
+
+.list-button {}

@@ -60,6 +60,7 @@ const SideDrawer: FC = () => {
                         <ListItemButton
                             component={Link}
                             to={navValue[2]}
+                            className="list-button"
                         >
                             <ListItemIcon >
                                 {location == navValue[2] ? navValue[0] : navValue[1]}
@@ -67,7 +68,7 @@ const SideDrawer: FC = () => {
                             <ListItemText
                                 primary={navValue[3]}
                                 disableTypography
-                                className="text-size"
+                                className="text-size-nav"
                                 sx={{
                                     display: { xs: 'none', lg: 'block' },
                                 }}
@@ -77,11 +78,13 @@ const SideDrawer: FC = () => {
                 ))}
                 <ListItem className={"button chat-button"} disablePadding>
                     <ListItemButton onClick={() => setOpen(true)} >
-                        <CreateIcon className="icon" />
+                        <CreateIcon sx={{
+                            display: { xs: 'block', lg: 'none' },
+                        }} className="icon" />
                         <ListItemText
                             primary={"New Chat"}
                             disableTypography
-                            className="text-size"
+                            className="text-size-nav bold new-chat-button"
                             sx={{
                                 display: { xs: 'none', lg: 'block' },
                             }} />

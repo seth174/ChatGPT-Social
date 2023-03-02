@@ -20,7 +20,19 @@ const NewChatModal: FC<INewChatModalProps> = (props: INewChatModalProps) => {
                         <CloseIcon className="close-icon" />
                     </div>
                     <div className="text-field-border">
-                        <TextField label={"What question can I answer?"} variant="standard" multiline fullWidth maxRows={50} />
+                        <TextField
+                            InputProps={{ style: { fontSize: 25 } }}
+                            InputLabelProps={{ style: { fontSize: 20 } }}
+                            label={"What question can I answer?"}
+                            variant="standard"
+                            minRows={7}
+                            multiline
+                            fullWidth
+                            maxRows={50}
+                        />
+                    </div>
+                    <div className="button-border">
+                        <Button className="submit-button" variant="contained" >Ask Question</Button>
                     </div>
                 </div>
             </div>
