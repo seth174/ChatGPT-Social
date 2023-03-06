@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Heart extends BaseEntity{
+public class Like extends BaseEntity{
     @NotBlank
     private byte deleted;
 
     @Column(name = "post_id")
     private long postId;
     @ManyToOne
-    private Person person;
+    private People people;
 }

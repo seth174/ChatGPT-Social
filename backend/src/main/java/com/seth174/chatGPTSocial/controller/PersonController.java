@@ -2,7 +2,7 @@ package com.seth174.chatGPTSocial.controller;
 
 import com.seth174.chatGPTSocial.service.PersonService;
 import com.seth174.chatGPTSocial.shared.dto.person.PersonCreateDTO;
-import com.seth174.chatGPTSocial.shared.entity.Person;
+import com.seth174.chatGPTSocial.shared.entity.People;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +19,8 @@ public class PersonController {
     }
 
     @PostMapping()
-    public @ResponseBody Person savePerson(@RequestBody PersonCreateDTO personCreateDTO){
+    public @ResponseBody
+    People savePerson(@RequestBody PersonCreateDTO personCreateDTO){
         return personService.addPerson(personCreateDTO);
     }
 

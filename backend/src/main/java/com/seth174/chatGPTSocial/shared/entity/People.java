@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Person extends BaseEntity {
+public class People extends BaseEntity {
     @Email(message = "Not valid email")
     @NotBlank(message = "Email required")
     private String email;
