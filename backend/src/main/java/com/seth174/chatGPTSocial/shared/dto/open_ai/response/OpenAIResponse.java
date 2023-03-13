@@ -1,10 +1,10 @@
-package com.seth174.chatGPTSocial.shared.dto.chatgpt.response;
+package com.seth174.chatGPTSocial.shared.dto.open_ai.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ChatGPTResponse {
+public class OpenAIResponse {
     private String response;
 }

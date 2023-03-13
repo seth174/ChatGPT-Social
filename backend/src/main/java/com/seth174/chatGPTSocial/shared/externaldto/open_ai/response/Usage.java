@@ -1,4 +1,4 @@
-package com.seth174.chatGPTSocial.shared.externaldto.chatgpt.response;
+package com.seth174.chatGPTSocial.shared.externaldto.open_ai.response;
 
 import lombok.Data;
 
