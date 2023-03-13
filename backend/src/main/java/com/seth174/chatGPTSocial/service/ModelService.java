@@ -18,7 +18,7 @@ public class ModelService {
         try{
             modelDTO = findModelByName(name);
         } catch (Exception e){
-            Model model = new Model(name);
+            Model model = new Model(name.toLowerCase(Locale.ROOT));
             Model savedModel = modelRepository.save(model);
             modelDTO = new ModelDTO(savedModel.getId(), savedModel.getName());
         }
