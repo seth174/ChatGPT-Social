@@ -31,5 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
-
+.pgdata/
 application-local.properties

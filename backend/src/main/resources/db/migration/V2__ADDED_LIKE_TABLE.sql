@@ -1,4 +1,4 @@
-CREATE TABLE likes (
+create table likes (
   id SERIAL PRIMARY KEY,
   person_id INTEGER NOT NULL,
   post_id INTEGER NOT NULL,
