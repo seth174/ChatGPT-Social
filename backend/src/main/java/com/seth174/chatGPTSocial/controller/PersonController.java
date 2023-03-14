@@ -4,10 +4,7 @@ import com.seth174.chatGPTSocial.service.PersonService;
 import com.seth174.chatGPTSocial.shared.dto.person.PersonCreateDTO;
 import com.seth174.chatGPTSocial.shared.entity.People;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/v1/person")
@@ -19,8 +16,7 @@ public class PersonController {
     }
 
     @PostMapping()
-    public @ResponseBody
-    People savePerson(@RequestBody PersonCreateDTO personCreateDTO){
+    public @ResponseBody People savePerson(@RequestBody PersonCreateDTO personCreateDTO){
         return personService.addPerson(personCreateDTO);
     }
 

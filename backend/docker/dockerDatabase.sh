@@ -1,10 +1,8 @@
 docker pull postgres:latest
-docker volume create OpenAI
 docker run -d \
-	--name OpenAI \
+	--name askme \
 	-e POSTGRES_PASSWORD=postgres \
-    -e PGDATA=/var/lib/postgresql/data/pgdata \
-    -e POSTGRES_DB=OpenAI \
-	-v postgres:/var/lib/postgresql/data \
+    -e POSTGRES_DB=askme \
+	-v pgdata:/var/lib/postgresql/data \
     -p 5432:5432 \
 	postgres:latest

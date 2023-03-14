@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import reactor.core.publisher.Mono;
 
 @Controller
-@RequestMapping(value = "/v1/chat-gpt")
+@RequestMapping(value = "/v1/openai")
 public class OpenAI {
     private final OpenAIService openAIService;
 
